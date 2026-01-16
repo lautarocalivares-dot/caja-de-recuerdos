@@ -1,0 +1,140 @@
+/* --------------------
+   Estilos generales
+-------------------- */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* para que las tarjetas se apilen verticalmente */
+    align-items: center;    /* centra horizontalmente */
+    justify-content: flex-start; /* parte superior */
+    min-height: 100vh;      
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f8f0; /* verde muy suave de fondo */
+    text-align: center;
+}
+
+/* --------------------
+   Título principal
+-------------------- */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* --------------------
+   Contenedor de tarjetas
+-------------------- */
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --------------------
+   Tarjetas
+-------------------- */
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    max-width: 600px;
+    width: 90%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* --------------------
+   Texto dentro de las tarjetas
+-------------------- */
+.card h3, .card h2 {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* --------------------
+   Grid del collage de fotos
+-------------------- */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    background-color: #a8d5a2; /* verde suave */
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/* Fotos dentro del collage */
+.collage-grid img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.collage-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Fotos más grandes dentro del collage */
+.collage-grid img.grande {
+    grid-row: span 2;       
+    grid-column: span 2;    
+}
+
+/* Fotos desplazadas a la derecha */
+.collage-grid img.desplazada {
+    width: calc(100% + 40px);
+    margin-left: 60px;
+}
+
+/* --------------------
+   Contenedor de las flores
+-------------------- */
+.flores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Cada flor */
+.flor img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.flor img:hover {
+    transform: scale(1.2);
+}
+
+/* Panel de mensajes de las flores */
+#infoFlor {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/* --------------------
+   Oculto al inicio
+-------------------- */
+.oculto {
+    display: none;
+}
+

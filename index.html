@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de Recuerdos</title>
+</head>
+<body>
+
+    <!-- Título de la página -->
+    <h1>Nuestra Caja de Recuerdos Para Sab, El Amor de mi Vida ❤️</h1>
+    <audio id="musicaFondo" src="musica/rapunzel.mp3" autoplay loop></audio>
+
+
+    <!-- TARJETA: Imágenes de nosotros -->
+    <div class="card" onclick="toggleCollage()">
+        <h2>Imágenes de nosotros ❤️</h2>
+
+        <!-- Contenedor oculto que se abre al tocar -->
+        <div id="collage" class="oculto">
+
+            <!-- Grid de fotos -->
+            <div class="collage-grid">
+                <img src="Nosotros/foto1.jpeg" class="grande">
+                <img src="Nosotros/foto2.jpeg">
+                <img src="Nosotros/foto3.jpeg">
+                <img src="Nosotros/foto4.jpeg">
+                <img src="Nosotros/foto5.jpeg">
+                <img src="Nosotros/foto6.jpeg">
+                <img src="Nosotros/foto7.jpeg">
+                <img src="Nosotros/foto8.jpeg" class="desplazada">
+                <img src="Nosotros/foto9.jpeg" class="grande">
+                <img src="Nosotros/foto10.jpeg" class="desplazada">
+                <img src="Nosotros/foto11.jpeg" class="grande">
+                <img src="Nosotros/foto12.jpeg" class="grande">
+                <img src="Nosotros/foto13.jpeg">
+                <img src="Nosotros/foto14.jpeg">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TARJETA: Playlist de Spotify -->
+    <div class="card" onclick="openPlaylist()">
+    <h2>Canciones que me recuerdan a vos 🎵</h2>
+    <p>Tocá para escuchar la playlist</p>
+    </div>
+    <div class="card" onclick="toggleCarta()">
+    <h2>Mi carta para vos ✨</h2>
+        <div id="carta" class="oculto">
+            <p>Sab, cada día que paso con vos es único, me hace tan feliz estar con vos, que seamos vos y yo.
+                cada día me dejas claro que me amas con cada pequeño o gran detalle que tengas, los regalos,
+                los mensajes, los cariños y todo tu hermoso amor. Se que nuestra relacion ha sido complicada,
+                que aveces estas tan cansada pero cada cosa lo superamos y seguimos juntos y eso me llena aun
+                mas de amor.
+                Quiero que esto te quede para un recuerdo de nosotros juntos, de cuanto te ame, te amo 
+                y te voy a amar siempre. 💖</p>
+            <p>Gracias por ser parte de mi vida y llenar mis días de alegría.</p>
+        </div>
+    </div>
+<!-- Tarjeta para abrir el ramo -->
+<div class="card" onclick="toggleRamo()">
+    <h2>Un ramo para vos 🌸</h2>
+    <p>Tocá para descubrir las flores y princesas que elegí para vos</p>
+</div>
+
+<!-- Ramo oculto al inicio -->
+<div id="ramo" class="oculto">
+    <div class="flores">
+        <div class="flor" onclick="mostrarSignificado('Rapunzel')">
+            <img src="Flores/Rapunzel.jpg" alt="Rapunzel">
+        </div>
+        <div class="flor" onclick="mostrarSignificado('Mulan')">
+            <img src="Flores/Mulan.jpg" alt="Mulan">
+        </div>
+        <div class="flor" onclick="mostrarSignificado('Tiana')">
+            <img src="Flores/Tiana.jpg" alt="Tiana">
+        </div>
+        <div class="flor" onclick="mostrarSignificado('Merida')">
+            <img src="Flores/Merida.jpg" alt="Merida">
+        </div>
+        <div class="flor" onclick="mostrarSignificado('Bella')">
+            <img src="Flores/Bella.jpg" alt="Bella">
+        </div>
+    </div>
+
+    <!-- Panel donde se muestra el mensaje de cada flor -->
+    <div id="infoFlor"></div>
+</div>
+
+
+<script>
+function toggleCarta() {
+    const carta = document.getElementById("carta");
+    if (carta.style.display === "none" || carta.style.display === "") {
+        carta.style.display = "block";
+    } else {
+        carta.style.display = "none";
+    }
+}
+</script>
+
+
+<script>
+function openPlaylist() {
+    window.open(
+        "https://open.spotify.com/playlist/2640bx8XoFc7TjxsY6kqaH?si=831aa7adb92348e5&pt=afabe9ba726278d6ddd6cd54658a7735",
+        "_blank"
+    );
+}
+</script>
+
+
+
+    <!-- JAVASCRIPT para abrir/cerrar collage -->
+    <script>
+        function toggleCollage() {
+            const collage = document.getElementById("collage");
+
+            if (collage.style.display === "none" || collage.style.display === "") {
+                collage.style.display = "block";
+            } else {
+                collage.style.display = "none";
+            }
+        }
+
+    </script>
+    <script>
+// Abrir/cerrar el ramo
+function toggleRamo() {
+    const ramo = document.getElementById("ramo");
+    if (ramo.style.display === "none" || ramo.style.display === "") {
+        ramo.style.display = "block";
+    } else {
+        ramo.style.display = "none";
+    }
+}
+
+// Mostrar mensaje de cada flor, cerrando el anterior
+function mostrarSignificado(princesa) {
+    const info = document.getElementById("infoFlor");
+    let mensaje = "";
+
+    switch(princesa) {
+        case "Rapunzel":
+            mensaje = `
+                <h3>Rapunzel 🌞</h3>
+                <p>Flor: Flor de Gota de Sol</p>
+                <p>Representa la luz, la esperanza y la alegría que traés a la vida de todos.  
+                Sos curiosa, valiente y luminosa.</p>
+            `;
+            break;
+        case "Mulan":
+            mensaje = `
+                <h3>Mulan 🌺</h3>
+                <p>Flor: Loto rojo</p>
+                <p>Representa el coraje, la fuerza y el honor.  
+                Enfrentando todo con valentía y determinación.</p>
+            `;
+            break;
+        case "Tiana":
+            mensaje = `
+                <h3>Tiana 🌼</h3>
+                <p>Flor: Lirio blanco</p>
+                <p>Representa el trabajo duro, la perseverancia y los sueños cumplidos,  
+                que nunca deja de luchar por lo que quiere.</p>
+            `;
+            break;
+        case "Merida":
+            mensaje = `
+                <h3>Merida 🟠</h3>
+                <p>Flor: Cardo escocés / Flor naranja</p>
+                <p>Representa la independencia, la libertad y el espíritu aventurero.</p>
+            `;
+            break;
+        case "Bella":
+            mensaje = `
+                <h3>Bella 🌹</h3>
+                <p>Flor: Rosa amarilla</p>
+                <p>Representa la sensibilidad, la dulzura y la capacidad de ver la belleza interior.</p>
+            `;
+            break;
+    }
+
+    // Mostrar el mensaje (cierra automáticamente el anterior)
+    info.innerHTML = mensaje;
+}
+</script>
+<script>
+window.addEventListener("load", () => {
+    const musica = document.getElementById("musicaFondo");
+    musica.play().catch(() => {
+        // Si no se puede reproducir automáticamente, esperar a que toque cualquier tarjeta
+        const tarjetas = document.querySelectorAll(".card");
+        tarjetas.forEach(tarjeta => {
+            tarjeta.addEventListener("click", () => {
+                musica.play();
+            }, { once: true });
+        });
+    });
+});
+</script>
+
+
+
+</body>
+</html>
+
